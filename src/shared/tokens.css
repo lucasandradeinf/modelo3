@@ -1,0 +1,335 @@
+/*
+ * Sistema visual da campanha "Satisfação Garantida ou Seu Dinheiro de Volta".
+ * Cores amostradas da peça-chave oficial (selo e fundo) e da apresentação
+ * de treinamento (painéis, destaques). Arquivo idêntico nos três modelos.
+ */
+:root {
+  /* Peça-chave */
+  --ff-marinho: #0a1832;        /* fundo escuro da apresentação */
+  --ff-marinho-2: #102544;
+  --ff-azul: #094982;           /* selo, títulos e logo na peça */
+  --ff-azul-logo: #054b82;      /* azul do símbolo da logo */
+  --ff-celeste: #86c2eb;        /* fundo da peça-chave */
+  --ff-celeste-2: #aed3f1;
+  --ff-celeste-3: #d6e9f8;
+  --ff-nevoa: #edf5fc;
+  --ff-amarelo: #fbbc42;        /* contorno do selo */
+  /* Apresentação */
+  --ff-destaque: #004de6;       /* azul de títulos e marcadores */
+  --ff-royal: #1d3a89;
+  --ff-amarelo-2: #ffc800;      /* tarjas "Vigência" e "Limite por CPF" */
+  --ff-painel: #edf2f9;
+  /* Neutros */
+  --ff-branco: #ffffff;
+  --ff-tinta: #0f1f36;
+  --ff-texto: #33435a;
+  --ff-suave: #5d6b80;
+  --ff-linha: #d5deea;
+  --ff-ok: #16794a;
+  --ff-alerta: #a2262b;
+
+  /* Tipografia — Inter (apresentação) e Source Sans 3 (equivalente livre da família do selo) */
+  --fonte-display: 'Source Sans 3 Variable', 'Source Sans 3', 'Myriad Pro', system-ui, sans-serif;
+  --fonte-texto: 'Inter Variable', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --t-xs: 0.8125rem;
+  --t-sm: 0.9375rem;
+  --t-md: 1.0625rem;
+  --t-lg: clamp(1.15rem, 1.05rem + 0.4vw, 1.35rem);
+  --t-xl: clamp(1.5rem, 1.2rem + 1.2vw, 2.1rem);
+  --t-2xl: clamp(2rem, 1.4rem + 2.6vw, 3.4rem);
+  --t-3xl: clamp(2.6rem, 1.6rem + 4.4vw, 5.6rem);
+
+  /* Espaços */
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-5: 1.5rem;
+  --s-6: 2rem;
+  --s-7: 3rem;
+  --s-8: 4.5rem;
+  --s-9: clamp(4rem, 2.5rem + 6vw, 8rem);
+  --gutter: clamp(1.1rem, 0.6rem + 2.4vw, 2.5rem);
+  --largura: 1240px;
+
+  /* Bordas e sombras */
+  --r-sm: 8px;
+  --r-md: 14px;
+  --r-lg: 24px;
+  --r-xl: 36px;
+  --r-pilula: 999px;
+  --sombra-1: 0 1px 2px rgb(10 24 50 / 0.06), 0 2px 8px rgb(10 24 50 / 0.06);
+  --sombra-2: 0 10px 30px -12px rgb(10 24 50 / 0.28);
+  --sombra-3: 0 30px 60px -24px rgb(10 24 50 / 0.45);
+  --sombra-produto: drop-shadow(0 18px 18px rgb(10 24 50 / 0.18));
+
+  --ease: cubic-bezier(0.22, 0.7, 0.2, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 88px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--fonte-texto);
+  font-size: var(--t-md);
+  line-height: 1.6;
+  color: var(--ff-texto);
+  background: var(--ff-branco);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  color: var(--ff-tinta);
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+p {
+  margin: 0;
+  text-wrap: pretty;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--ff-amarelo);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.pular {
+  position: absolute;
+  left: var(--s-4);
+  top: -100px;
+  z-index: 100;
+  padding: var(--s-3) var(--s-4);
+  background: var(--ff-amarelo);
+  color: var(--ff-marinho);
+  font-weight: 700;
+  border-radius: var(--r-sm);
+}
+
+.pular:focus {
+  top: var(--s-4);
+}
+
+.container {
+  width: 100%;
+  max-width: calc(var(--largura) + 2 * var(--gutter));
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* Botões ------------------------------------------------------------- */
+.btn {
+  --btn-bg: var(--ff-amarelo);
+  --btn-fg: var(--ff-marinho);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+  min-height: 52px;
+  padding: 0.85em 1.5em;
+  border: 2px solid transparent;
+  border-radius: var(--r-pilula);
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  font-family: var(--fonte-texto);
+  font-size: var(--t-sm);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform 0.25s var(--ease),
+    box-shadow 0.25s var(--ease),
+    background-color 0.2s,
+    color 0.2s,
+    border-color 0.2s;
+}
+
+.btn svg {
+  width: 1.15em;
+  height: 1.15em;
+  flex: none;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -12px rgb(10 24 50 / 0.55);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.btn--azul {
+  --btn-bg: var(--ff-azul);
+  --btn-fg: var(--ff-branco);
+}
+
+.btn--azul:hover {
+  --btn-bg: var(--ff-azul-logo);
+}
+
+.btn--amarelo:hover {
+  --btn-bg: #ffc95e;
+}
+
+.btn--contorno {
+  --btn-bg: transparent;
+  --btn-fg: currentColor;
+  border-color: currentColor;
+}
+
+.btn--contorno:hover {
+  --btn-bg: rgb(255 255 255 / 0.12);
+}
+
+.btn--branco {
+  --btn-bg: var(--ff-branco);
+  --btn-fg: var(--ff-azul);
+}
+
+/* Produtos (recortes com fundo transparente) ------------------------- */
+.produto-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  filter: var(--sombra-produto);
+}
+
+/* Revelação suave ao rolar ------------------------------------------- */
+@media (prefers-reduced-motion: no-preference) {
+  .revelar {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 0.8s var(--ease),
+      transform 0.8s var(--ease);
+  }
+
+  .revelar.visivel {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Faixa de ambiente de avaliação ------------------------------------- */
+.faixa-aprovacao {
+  background: var(--ff-amarelo-2);
+  color: var(--ff-marinho);
+  font-size: var(--t-xs);
+  font-weight: 600;
+  text-align: center;
+  padding: 0.45rem var(--gutter);
+  line-height: 1.4;
+}
+
+.faixa-aprovacao a {
+  font-weight: 700;
+}
+
+/* FAQ — estrutura comum; cada modelo define a aparência ----------------- */
+.faq-titulo {
+  margin: 0;
+  font-size: inherit;
+}
+
+.faq-q {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-4);
+  padding: var(--s-4) 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+}
+
+.faq-icone {
+  flex: none;
+  display: grid;
+  place-items: center;
+  transition: transform 0.3s var(--ease);
+}
+
+.faq-icone svg {
+  width: 22px;
+  height: 22px;
+}
+
+.faq-item.aberto .faq-icone {
+  transform: rotate(180deg);
+}
+
+.faq-a {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s var(--ease);
+}
+
+.faq-a > div {
+  overflow: hidden;
+}
+
+.faq-item.aberto .faq-a {
+  grid-template-rows: 1fr;
+}
+
+.faq-a p {
+  padding-bottom: var(--s-4);
+  max-width: 72ch;
+}

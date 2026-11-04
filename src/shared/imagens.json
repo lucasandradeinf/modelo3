@@ -1,0 +1,250 @@
+{
+ "vid-hid200-fashion": {
+  "w": 393,
+  "h": 1100
+ },
+ "vid-hid200-night": {
+  "w": 392,
+  "h": 1100
+ },
+ "vid-hid200-ureia": {
+  "w": 391,
+  "h": 1100
+ },
+ "vid-hid425-night": {
+  "w": 347,
+  "h": 1100
+ },
+ "vid-hid425-fashion": {
+  "w": 339,
+  "h": 1100
+ },
+ "vid-hid425-clean": {
+  "w": 341,
+  "h": 1100
+ },
+ "vid-facial-zinco": {
+  "w": 291,
+  "h": 1100
+ },
+ "vid-facial-salicilico": {
+  "w": 295,
+  "h": 1100
+ },
+ "vid-facial-vitc": {
+  "w": 295,
+  "h": 1100
+ },
+ "vid-liq-frutas": {
+  "w": 450,
+  "h": 1100
+ },
+ "vid-liq-erva": {
+  "w": 450,
+  "h": 1100
+ },
+ "vid-liq-cha": {
+  "w": 451,
+  "h": 1100
+ },
+ "vid-micelar-limpeza": {
+  "w": 299,
+  "h": 1100
+ },
+ "vid-micelar-hialuronico": {
+  "w": 297,
+  "h": 1100
+ },
+ "iph-irresistivel": {
+  "w": 391,
+  "h": 1100
+ },
+ "iph-atrativa": {
+  "w": 390,
+  "h": 1100
+ },
+ "iph-floral": {
+  "w": 390,
+  "h": 1100
+ },
+ "iph-toque-fresco": {
+  "w": 389,
+  "h": 1100
+ },
+ "iph-neutro": {
+  "w": 394,
+  "h": 1100
+ },
+ "iph-equilibrio": {
+  "w": 397,
+  "h": 1100
+ },
+ "iph-elimina-odores": {
+  "w": 389,
+  "h": 1100
+ },
+ "gel-dm-7ervas": {
+  "w": 375,
+  "h": 1100
+ },
+ "gel-dm-arnica": {
+  "w": 379,
+  "h": 1100
+ },
+ "gel-dm-sebo": {
+  "w": 376,
+  "h": 1100
+ },
+ "gel-dm-ice": {
+  "w": 381,
+  "h": 1100
+ },
+ "gel-tm-arnica": {
+  "w": 354,
+  "h": 1100
+ },
+ "gel-tm-ice": {
+  "w": 350,
+  "h": 1100
+ },
+ "grp-vid-hid425": {
+  "w": 1600,
+  "h": 1979
+ },
+ "grp-vid-liquido": {
+  "w": 1600,
+  "h": 1677
+ },
+ "grp-vid-facial": {
+  "w": 1600,
+  "h": 1904
+ },
+ "grp-vid-facial-micelar": {
+  "w": 1600,
+  "h": 1132
+ },
+ "grp-vid-micelar": {
+  "w": 1600,
+  "h": 2851
+ },
+ "grp-doutormax": {
+  "w": 1600,
+  "h": 1148
+ },
+ "grp-tandrimax": {
+  "w": 1600,
+  "h": 2400
+ },
+ "tnh-sh-cachinhos": {
+  "w": 326,
+  "h": 598
+ },
+ "tnh-co-cachinhos": {
+  "w": 330,
+  "h": 600
+ },
+ "tnh-sh-princesa": {
+  "w": 330,
+  "h": 600
+ },
+ "tnh-co-princesa": {
+  "w": 318,
+  "h": 584
+ },
+ "tnh-sh-lisinhos": {
+  "w": 324,
+  "h": 592
+ },
+ "tnh-co-lisinhos": {
+  "w": 328,
+  "h": 600
+ },
+ "tnh-sh-todos": {
+  "w": 334,
+  "h": 600
+ },
+ "tnh-co-todos": {
+  "w": 324,
+  "h": 594
+ },
+ "kv-oficial": {
+  "w": 1400,
+  "h": 1660
+ },
+ "kv-oficial-sm": {
+  "w": 760,
+  "h": 901
+ },
+ "kv-cena": {
+  "w": 2000,
+  "h": 1976
+ },
+ "kv-cena-sm": {
+  "w": 1100,
+  "h": 1087
+ },
+ "kv-retrato": {
+  "w": 1300,
+  "h": 1526
+ },
+ "kv-retrato-sm": {
+  "w": 760,
+  "h": 892
+ },
+ "kv-prateleira": {
+  "w": 2000,
+  "h": 632
+ },
+ "kv-prateleira-sm": {
+  "w": 1000,
+  "h": 316
+ },
+ "jornada-1": {
+  "w": 900,
+  "h": 900
+ },
+ "jornada-2": {
+  "w": 900,
+  "h": 900
+ },
+ "jornada-3": {
+  "w": 900,
+  "h": 900
+ },
+ "jornada-4": {
+  "w": 900,
+  "h": 900
+ },
+ "jornada-5": {
+  "w": 900,
+  "h": 900
+ },
+ "pdv": {
+  "w": 1400,
+  "h": 900
+ },
+ "faixa-produtos": {
+  "w": 2400,
+  "h": 428
+ },
+ "logo-azul": {
+  "w": 1000,
+  "h": 302
+ },
+ "logo-branco": {
+  "w": 1000,
+  "h": 302
+ },
+ "logo-colorido": {
+  "w": 1000,
+  "h": 302
+ },
+ "logo-h-azul": {
+  "w": 1200,
+  "h": 95
+ },
+ "logo-h-branco": {
+  "w": 1200,
+  "h": 95
+ }
+}

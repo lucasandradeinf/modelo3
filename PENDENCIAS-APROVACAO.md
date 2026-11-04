@@ -1,76 +1,73 @@
 # Pendências para aprovação — Campanha “Satisfação Garantida ou Seu Dinheiro de Volta”
 
-**Documento analisado:** `FRANCEFARMA - Regulamento - Campanha Satisfação Garantida v02 atualizada 21.08.2026 (2).docx`
-(9 páginas; SHA-256 `672A5748A74F13DFBA6412A33BF63D26FFEDEF6FC1EBEB00190CD85F082E9976`)
-**Data da análise:** 28/10/2026
+**Atualizado em:** 04/11/2026 (reformulação com os materiais oficiais)
+**Documentos comparados:** regulamento v02 (DOCX, 21/08/2026), apresentação `slides campanha.pdf` / PPTX “Guia de Treinamento de Campo” e peça-chave oficial.
 
-> As três landing pages (modelo1, modelo2, modelo3) são **ambientes de demonstração** para a equipe de marketing.
-> Página visualmente pronta **não** significa campanha juridicamente aprovada. Os itens abaixo precisam ser
-> resolvidos antes de qualquer divulgação pública.
-
-Atenção: a campanha já está em vigência pelo texto do regulamento (compras a partir de 14/09/2026). Se ela já estiver
-sendo divulgada por outros canais, a resolução destes pontos é urgente.
+> As três landing pages são **ambientes de demonstração** (faixa “versão para avaliação”, `noindex`).
+> Regra aplicada: **o regulamento prevalece** em tudo que é condição. Quando a apresentação diverge, as páginas seguem o
+> regulamento e o ponto fica registrado abaixo até a FranceFarma confirmar.
 
 ---
 
-## 1. Pendências presentes no próprio regulamento
+## 0. Divergências entre a apresentação e o regulamento (novas)
+
+| # | Tema | Apresentação / peça | Regulamento v02 | O que as páginas mostram | Decisão necessária |
+|---|---|---|---|---|---|
+| 0.1 | **Vigência** | “Ação Promocional 2026/27” e **14/12/2026 a 14/03/2027** (slide 2) | **14/09/2026 a 31/12/2026** (cl. 3.1) | Regulamento (14/09 a 31/12/2026), com o selo “Ação Promocional 2026/27” | **Crítica.** Confirmar a vigência e emitir regulamento com a data correta. Na página, a troca é feita em um só lugar (`APROVACAO.vigenciaInicio/Fim` em `src/shared/campanha.ts`). |
+| 0.2 | Código de postagem | “O SAC envia um código dos Correios em até 2 dias úteis” (slide 7) | Os 2 dias úteis são para **confirmar o protocolo** (6.4); o código é enviado “confirmado o protocolo”, **sem prazo** (8.1) | Regulamento: protocolo em até 2 dias úteis; código enviado após o protocolo | Definir se haverá prazo para o código e incluí-lo no regulamento, ou corrigir o slide. |
+| 0.3 | Forma de pagamento | “Recebe o valor pago via PIX” (slide 5); “Se aprovado, o PIX é feito em até 15 dias” (slide 7) | **PIX ou transferência bancária** (12.1) | PIX ou transferência | Corrigir o slide ou o regulamento. |
+| 0.4 | Redes participantes | “Tatico, Bretas, SuperVi, Supermercado 007, Raio de Sol e Rede Store” (slide 3) | “Tatico, **Bretas/Prezunic**, SuperVi, Supermercado 007, Raio de Sol, **Supermercado Rede Store**” (3.4), com nota interna dizendo que o Prezunic foi retirado | Nomes **ocultos** (`exibirRedes: false`); a página remete à cláusula 3.4. A lista do slide já está carregada no código para ser ativada. | Lista final com razão social/CNPJ e **autorização das redes** para uso dos nomes (18.2). |
+| 0.5 | Hidratante “500 ml” | “Hidratante 500ml” (slide 4) | “Hidratante 500 ml” (Anexo I) | Fotos das embalagens com válvula, que indicam **425 g**, com nota de conferência | Confirmar se o item do Anexo I é a embalagem de 425 g (e corrigir o texto) ou se existe uma de 500 ml. |
+| 0.6 | Embalagem Tá na Hora | A peça-chave mostra embalagens com **ilustração infantil** (Shampoo Cachinhos laranja, Condicionador Lisinhos roxo) | — | Packshots do site oficial (embalagem com mascotes), porque a pasta `TA NA HORA` veio vazia | Confirmar qual embalagem está nas gôndolas e enviar fotos em alta resolução. |
+| 0.7 | Creme para pentear (Tá na Hora) | Listado no slide 4 | Listado no Anexo I | Citado no texto do Anexo I, **sem foto** | O produto não aparece no site oficial nem nas fotos. Confirmar se existe e enviar foto. |
+| 0.8 | “Reembolso total do valor pago*” | Texto da peça, com asterisco | “Valor efetivamente pago… consideradas promoções e descontos” (11.1) | Frase da peça mantida, com a nota do asterisco por extenso logo abaixo | Validar a redação do asterisco com o jurídico. |
+| 0.9 | Endereço do regulamento | QR Code da peça leva a `www.francefarma.com.br/regulamento` | Preâmbulo: “endereço eletrônico indicado no material da Campanha” | As páginas estão em `lucasandradeinf.github.io/modeloN/` (demonstração) | Publicar o regulamento final no endereço do QR Code ou ajustar o QR para a página escolhida. |
+| 0.10 | “Usa … por alguns dias” | Slide 5 | O regulamento não exige tempo mínimo de uso (6.1) | “Use o produto normalmente, conforme as instruções da embalagem” | Retirar “por alguns dias” do treinamento para não criar uma condição inexistente. |
+| 0.11 | Quem não participa | “Funcionários da Francefarma e agências envolvidas” (slide 3) | Lista mais ampla: sócios, administradores, prestadores, fornecedores, PJ, revendedores (5.2) | Texto completo do regulamento | Nenhuma: é uma simplificação do slide. Registrado para alinhamento do treinamento. |
+
+## 1. Pendências presentes no próprio regulamento (mantidas da rodada anterior)
 
 | # | Onde | O que diz o documento | O que precisa ser validado |
-|---|------|-----------------------|----------------------------|
-| 1.1 | Cláusula 3.4 (nota após a cláusula) | `[PENDÊNCIA: confirmar a lista final das redes com razão social e CNPJ de cada uma; "Store" está com nome incompleto; o Prezunic foi retirado da lista — é rede do Rio de Janeiro (grupo Cencosud) e não opera em Goiás…]` | (a) Lista definitiva das redes, com razão social e CNPJ. (b) Nome completo de “Supermercado Rede Store”. (c) **Inconsistência:** a nota diz que o Prezunic “foi retirado”, mas o texto da cláusula 3.4 **ainda lista “Bretas/Prezunic”**. Corrigir o texto. |
-| 1.2 | Cláusula 18.2 (nota após a cláusula) | `[PENDÊNCIA: confirmar se há autorização das redes para o uso de seus nomes no Regulamento e no material publicitário da Campanha.]` | Obter autorização formal de cada rede para uso do nome no regulamento e nas peças. |
-| 1.3 | Após a cláusula 18.2 | Parágrafo “MOTIVAÇÃO: a Versão 01 citava as marcas dos supermercados…” | É uma justificativa interna do escritório. **Deve ser removida** da versão final publicada. |
-| 1.4 | Anexo I | “– Linha Tá na Hora: Condicionador; Shampoo; Creme para pentear;” e “– Gel de Massagem: Doutormax; Tandrimax.” estão **no mesmo parágrafo**, separados só por quebra de linha manual. | Separar em itens distintos e confirmar que “Gel de Massagem” é um grupo autônomo (não um item da linha Tá na Hora). |
-| 1.5 | Anexo I — Tá na Hora | Lista “Creme para pentear”. | **O site oficial da FranceFarma (consultado em 28/10/2026) não lista Creme para pentear na linha Tá na Hora** (lista apenas shampoos, condicionadores e kits). Confirmar se o produto existe/está à venda. |
-| 1.6 | Anexo I — Vidália | “Hidratante 200 ml; Hidratante 500 ml; Sabonete facial; Sabonete líquido; Água Micelar”, sem versões. | O site oficial mostra várias versões: hidratantes (Uréia, Milky, Soft, Clean, Night, Fashion — este último só 200 ml), sabonetes faciais (Vitamina C, Romã, Pepino), sabonetes líquidos (Chá Verde, Erva Doce, Frutas Vermelhas) e duas águas micelares (com e sem ácido hialurônico). Confirmar se **todas as versões** participam ou listar SKUs/EAN. |
-| 1.7 | Anexo I — Íntimo pH | “todos os itens da linha”. | O site lista 8 sabonetes avulsos e 3 **kits** da linha. Confirmar se os kits pagos participam e como contar “Unidade” (cláusula 1.1.3) em kits. |
-| 1.8 | Anexo I — Gel de Massagem | “Doutormax; Tandrimax”. | O site oficial denomina esses produtos “Gel de Arnica” e mostra 4 versões Doutormax e 2 Tandrimax. Confirmar quais participam e padronizar a nomenclatura. |
-| 1.9 | Página 9 — assinaturas | Três blocos de assinatura “X — Marcelo Baiocchi — Presidente”, **sem assinatura**. | Definir o signatário correto pela Promotora (FranceFarma) e assinar a versão final. Os blocos atuais parecem modelo do escritório. |
-| 1.10 | Preâmbulo | “Este Regulamento estará disponível… no endereço eletrônico indicado no material da Campanha.” | Definir qual URL oficial hospedará o regulamento (as URLs github.io são de demonstração). |
-| 1.11 | Cabeçalho/rodapé | Logotipo e endereço do escritório Baiocchi Advogados em todas as páginas. | Avaliar se a versão pública deve sair com a identidade da Promotora. As landing pages **não** usam essa identidade nem esse endereço. |
+|---|---|---|---|
+| 1.1 | Cláusula 3.4 | `[PENDÊNCIA: confirmar a lista final das redes…; o Prezunic foi retirado da lista…]` | Lista definitiva com razão social e CNPJ. Inconsistência: a nota diz que o Prezunic foi retirado, mas o texto ainda lista “Bretas/Prezunic”. |
+| 1.2 | Cláusula 18.2 | `[PENDÊNCIA: confirmar se há autorização das redes para o uso de seus nomes…]` | Autorização formal de cada rede. |
+| 1.3 | Após a cláusula 18.2 | Parágrafo “MOTIVAÇÃO: …” | Justificativa interna do escritório: **remover** da versão publicada. |
+| 1.4 | Anexo I | Tá na Hora e Gel de Massagem no mesmo parágrafo | Separar os itens. |
+| 1.5 | Anexo I — Vidália | Itens sem versões | As fotos mostram 14 versões (3 hidratantes 200 ml, 3 com válvula, 3 sabonetes faciais, 3 sabonetes líquidos, 2 águas micelares). Confirmar se todas participam (ideal: lista de SKU/EAN). |
+| 1.6 | Anexo I — Íntimo pH | “Todos os itens da linha” | As fotos mostram 7 versões. O site oficial também lista kits: confirmar se kits pagos participam e como contar “Unidade” (1.1.3). |
+| 1.7 | Anexo I — Gel de Massagem | “Doutormax; Tandrimax” | As fotos mostram 4 versões Doutormax e 2 Tandrimax. Confirmar quais participam. |
+| 1.8 | Página 9 | Blocos de assinatura sem assinatura | Definir o signatário pela Promotora. |
+| 1.9 | Cabeçalho/rodapé | Identidade do escritório de advocacia | Avaliar a versão pública com a identidade da Promotora. |
 
-## 2. Informações que precisam de confirmação da empresa
+## 2. Materiais e uso de imagem
 
-- Lista oficial de produtos participantes por SKU/EAN (ver 1.5 a 1.8).
-- Lista oficial de redes, razão social e CNPJ (1.1) e autorizações (1.2).
-- Se o SAC (`sac@francefarma.com.br`) está preparado para o volume, o roteiro de resposta com protocolo em até 2 dias úteis (6.4) e o fluxo de logística reversa dos Correios (8.1).
-- URL definitiva de publicação do regulamento e das páginas (domínio da FranceFarma ou outro).
-- Se há outros canais de atendimento que devam aparecer nas páginas. Hoje as páginas mostram **apenas** o e-mail citado no regulamento. O site oficial também informa telefone (62) 3249-0804 e WhatsApp (62) 99811-7642, mas eles **não** foram incluídos porque o regulamento não os indica como canal da campanha.
-- Existência e arte do “selo da Campanha” citado na cláusula 4.2.
+- **Peça-chave derivada:** para usar o selo em vetor (nítido em qualquer tela), foi gerada uma versão da peça **sem o selo e sem os textos** (`kv-cena`), preenchendo o fundo azul-claro. A modelo, as embalagens e a prateleira não foram alteradas. Validar com a agência/branding.
+- **Selo em vetor:** reproduzido a partir da peça (cores e proporções medidas). A fonte do selo foi aproximada pela Source Sans 3; se a agência tiver o arquivo vetorial original (AI/SVG/PDF), substituir `Selo.tsx` pela arte oficial.
+- **Direito de imagem da modelo** da peça-chave e das fotos da jornada (slide 5): confirmar a licença para uso **web** e por quanto tempo. As fotos da jornada parecem geradas ou de banco de imagens; confirmar a origem.
+- **Logo:** usada em aplicação monocromática azul (como na peça) e branca (como nos slides), gerada pela máscara do arquivo oficial, sem redesenho. Confirmar com o branding.
+- **Tá na Hora:** imagens de 600 px do site oficial (abaixo do padrão das demais). Pedir packshots em alta.
+- **Fotos não usadas:** 31 versos e 13 tomadas alternativas (ver `INVENTARIO-ASSETS.md`). O verso P1020441 (Íntimo pH Floral) está na pasta `GEL MASSAGEM`.
 
 ## 3. Elementos de marketing que precisam de aprovação
 
 - **Escolha do modelo** (ver `COMPARATIVO-MODELOS.md`).
-- **Títulos e frases criativas**: “Satisfação garantida ou seu dinheiro de volta.”, “Experimente com liberdade. Sua opinião é respeitada.”, “Experimente sem medo. A sua opinião vale.”, “Sua experiência importa”, “Você conhece o produto… A gente respeita a sua opinião.”, “Não ficou satisfeito? Estamos ouvindo.”
-- **Selo gráfico do Modelo 2** (“Satisfação garantida • Condições no regulamento — Seu dinheiro de volta*”), com asterisco remetendo às condições. É um grafismo da campanha, não uma certificação.
-- **Uso das fotos de embalagens**: as imagens foram obtidas no site oficial `francefarma.com.br` (ver seção 5). Confirmar a autorização de uso e, de preferência, fornecer packshots em alta resolução (os originais públicos têm de 300 px a 1000 px).
-- **Água Micelar Vidália**: a imagem oficial publicada no site mostra o rótulo de rascunho “XXX ml”. Ela **não foi usada** nas páginas. Fornecer foto final da embalagem.
-- **Ilustrações do Modelo 3**: são vetores originais criados para a proposta (pessoas diversas em autocuidado). Não houve ferramenta de geração de imagens nem banco de fotos licenciado disponível. Para a versão final, recomenda-se uma sessão de fotos lifestyle própria, com produtos reais e pessoas com autorização de imagem.
-- **Favicon**: usa o símbolo recortado da logo oficial, sem alteração de forma ou cor. Confirmar com o branding.
-- Os logotipos das linhas (Vidália, Íntimo pH, Tá na Hora, Doutormax, Tandrimax) **não** são usados nas páginas: as linhas aparecem só por nome e foto de embalagem.
+- **Frases criativas** (fora do texto oficial da peça): “Experimente. Se não gostar, a gente devolve.” (M1), “Experimente sem medo. Não gostou, o dinheiro volta.” (M2), “Uma garantia simples, com regras claras” (M3), “Procure o selo nas gôndolas”, “Tire suas dúvidas”.
+- **Números em destaque do Modelo 2:** “30 dias”, “2 unidades”, “100% do valor pago*”. O “100%” traduz o “Reembolso total” da peça e leva o mesmo asterisco.
+- **Selo informativo:** a seção de PDV reforça que o selo na embalagem é apenas sinalização (cl. 4.2).
 
-## 4. Verificações antes da publicação oficial
+## 4. Antes da publicação oficial
 
-1. Aprovar e assinar a versão final do regulamento **sem** notas internas (1.1–1.3 e 1.9).
-2. Substituir os arquivos `public/regulamento/*.pdf` e `*.docx` de cada repositório pela versão aprovada e regenerar `src/content/regulamento.json` (transcrição exibida no site).
-3. Atualizar `src/content/campanha.ts` → bloco `APROVACAO`:
-   - `modoAprovacao: false` (remove a faixa “versão para avaliação” e o alerta de minuta);
-   - `exibirRedes: true` e `redesParticipantes: [...]` **somente** com a lista final autorizada;
-   - `versaoRegulamento` com a identificação da versão aprovada;
-   - itens do Anexo I em `LINHAS`, conforme a versão final.
-4. Remover `<meta name="robots" content="noindex, nofollow">` do `index.html` quando a página puder ser indexada.
-5. Validar as respostas do FAQ com o jurídico (foram escritas estritamente a partir das cláusulas 2 a 19).
-6. Revisar o texto do e-mail pré-preenchido do botão do SAC (`MAILTO_SAC` em `campanha.ts`).
-7. Definir o domínio final e atualizar `og:url`, `og:image` e o `base` do `vite.config.ts`, se a hospedagem mudar.
-8. Rodar novamente `npm run typecheck && npm run build` e os testes de navegação.
-
-### Risco de publicar o regulamento atual
-
-O arquivo disponibilizado hoje nas páginas é a **minuta v02**, com as notas de revisão 1.1–1.3, a inconsistência sobre o Prezunic e as assinaturas em branco. As páginas sinalizam isso (“Documento em revisão”). Publicar esse arquivo como regulamento final exporia notas internas, nomes de redes sem autorização e uma lista de produtos ambígua. O DOCX foi mantido **intacto** (cópia byte a byte). O PDF foi gerado pelo Microsoft Word a partir dele, sem edição.
+1. Resolver 0.1 (vigência) e emitir o regulamento final, sem notas internas (1.1–1.3, 1.8).
+2. Substituir `public/regulamento/*.pdf|docx` e regenerar `src/shared/regulamento.json`.
+3. Em `_assets/v2/shared/campanha.ts`, bloco `APROVACAO`: `modoAprovacao: false`, datas de vigência, `exibirRedes`/`redesParticipantes` com a lista autorizada e `versaoRegulamento`. Depois, `bash _assets/v2/sync.sh modeloN` para cada modelo.
+4. Ajustar `src/shared/produtos.ts` ao Anexo I final (versões e notas). As notas de conferência só aparecem com `modoAprovacao: true`.
+5. Remover `<meta name="robots" content="noindex, nofollow">` do `index.html`.
+6. Validar o FAQ e o texto do e-mail pré-preenchido (`MAILTO_SAC`) com o jurídico.
+7. Definir o domínio final (ex.: `francefarma.com.br/regulamento`) e ajustar `og:url`, `canonical` e o `base` do `vite.config.ts`.
+8. `npm run typecheck && npm run build` e testes de navegação.
 
 ## 5. Fontes consultadas
 
-- Arquivos locais: regulamento DOCX (analisado por inteiro, inclusive cabeçalhos, rodapés e campos de assinatura) e `Logo-Assinado-l-Colorido-l-Preto-2048x619.png`.
-- `https://francefarma.com.br/` e páginas de categoria/produto (Vidália, ÍntimoPH, Tá na Hora, Doutormax, Tandrimax): fonte dos nomes, versões e fotos das embalagens.
-- **Não foi possível consultar:** a loja oficial no Mercado Livre (HTTP 403) e o LinkedIn (exige login). Algumas páginas do site oficial também bloquearam acessos automatizados (403), e esse bloqueio não foi contornado.
-- Não foi encontrada paleta oficial publicada. As cores das páginas foram derivadas da logo (azul ≈ #0B4A82, bordô ≈ #7A1424) e das embalagens.
+- Arquivos locais: regulamento DOCX (íntegra), apresentação PDF (12 páginas renderizadas) e PPTX (mídias e fontes), logo oficial e 78 fotografias.
+- `francefarma.com.br` (04/11/2026): categoria e páginas de produto Tá na Hora (8 produtos; nenhum creme para pentear).
+- As páginas mostram **apenas** o e-mail do SAC como canal da campanha, conforme o regulamento.
